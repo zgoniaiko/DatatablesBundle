@@ -651,6 +651,7 @@ class DatatableQuery
 
         $this->setLeftJoins($qb);
         $this->setWhereAllCallback($qb);
+        $qb->resetDQLPart('groupBy');
 
         return (int) $qb->getQuery()->getSingleScalarResult();
     }
@@ -671,6 +672,7 @@ class DatatableQuery
         $this->setLeftJoins($qb);
         $this->setWhere($qb);
         $this->setWhereAllCallback($qb);
+        $qb->resetDQLPart('groupBy');
 
         return (int) $qb->getQuery()->getSingleScalarResult();
     }
